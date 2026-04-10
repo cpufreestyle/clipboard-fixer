@@ -34,24 +34,25 @@ class ClipboardFixerGUI:
         title_frame.pack(fill=tk.X)
         title_frame.pack_propagate(False)
         
-        title_label = tk.Label(
-            title_frame, 
-            text="🔧 剪贴板修复工具",
-            font=("Microsoft YaHei", 20, "bold"),
-            fg="white",
-            bg="#2196F3"
-        )
-        title_label.place(x=10, y=22)
-
-        # 左上角水印
-        watermark_label = tk.Label(
+        # 左上角水印（确保任何字体都能显示）
+        wm = tk.Label(
             title_frame,
             text="michaelqiu",
-            font=("Microsoft YaHei", 14, "bold"),
+            font=("Arial", 16, "bold"),
             fg="#FFD700",
             bg="#2196F3"
         )
-        watermark_label.place(x=10, y=4)
+        wm.place(x=8, y=5)
+
+        # 主标题
+        title_label = tk.Label(
+            title_frame, 
+            text="剪贴板修复工具",
+            font=("Arial", 18, "bold"),
+            fg="white",
+            bg="#2196F3"
+        )
+        title_label.place
         
         # 状态显示区域
         status_frame = tk.LabelFrame(self.root, text="📊 服务状态", font=("Microsoft YaHei", 10))
