@@ -41,7 +41,17 @@ class ClipboardFixerGUI:
             fg="white",
             bg="#2196F3"
         )
-        title_label.pack(pady=20)
+        title_label.place(x=10, y=22)
+
+        # 左上角水印
+        watermark_label = tk.Label(
+            title_frame,
+            text="michaelqiu",
+            font=("Microsoft YaHei", 14, "bold"),
+            fg="#FFD700",
+            bg="#2196F3"
+        )
+        watermark_label.place(x=10, y=4)
         
         # 状态显示区域
         status_frame = tk.LabelFrame(self.root, text="📊 服务状态", font=("Microsoft YaHei", 10))
@@ -100,24 +110,13 @@ class ClipboardFixerGUI:
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.log_text.config(yscrollcommand=scrollbar.set)
         
-        # 版权信息 + 水印
-        footer_frame = tk.Frame(self.root)
-        footer_frame.pack(fill=tk.X, pady=5)
-        
+        # 版权信息
         tk.Label(
-            footer_frame,
+            self.root,
             text="Built with ❤️ | v1.0.0",
             font=("Microsoft YaHei", 8),
             fg="gray"
-        ).pack(side=tk.LEFT, padx=20)
-        
-        tk.Label(
-            footer_frame,
-            text="michaelqiu",
-            font=("Microsoft YaHei", 10, "bold"),
-            fg="#E91E63",
-            cursor="hand2"
-        ).pack(side=tk.RIGHT, padx=20)
+        ).pack(pady=5)
     
     def _lighten_color(self, color):
         """颜色变亮"""
