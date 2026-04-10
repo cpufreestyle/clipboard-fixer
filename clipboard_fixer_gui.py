@@ -100,13 +100,24 @@ class ClipboardFixerGUI:
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.log_text.config(yscrollcommand=scrollbar.set)
         
-        # 版权信息
+        # 版权信息 + 水印
+        footer_frame = tk.Frame(self.root)
+        footer_frame.pack(fill=tk.X, pady=5)
+        
         tk.Label(
-            self.root,
+            footer_frame,
             text="Built with ❤️ | v1.0.0",
             font=("Microsoft YaHei", 8),
             fg="gray"
-        ).pack(pady=5)
+        ).pack(side=tk.LEFT, padx=20)
+        
+        tk.Label(
+            footer_frame,
+            text="michaelqiu",
+            font=("Microsoft YaHei", 8, "bold"),
+            fg="#90CAF9",
+            cursor="hand2"
+        ).pack(side=tk.RIGHT, padx=20)
     
     def _lighten_color(self, color):
         """颜色变亮"""
