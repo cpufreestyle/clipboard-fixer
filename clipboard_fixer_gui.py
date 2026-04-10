@@ -114,8 +114,8 @@ class ClipboardFixerGUI:
         tk.Label(
             footer_frame,
             text="michaelqiu",
-            font=("Microsoft YaHei", 8, "bold"),
-            fg="#90CAF9",
+            font=("Microsoft YaHei", 10, "bold"),
+            fg="#E91E63",
             cursor="hand2"
         ).pack(side=tk.RIGHT, padx=20)
     
