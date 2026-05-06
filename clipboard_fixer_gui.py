@@ -114,7 +114,7 @@ class ClipboardFixerGUI:
         # 版权信息
         tk.Label(
             self.root,
-            text="Built with ❤️ | v1.0.0",
+            text="Built with ❤️ | v1.0.1",
             font=("Microsoft YaHei", 8),
             fg="gray"
         ).pack(pady=5)
